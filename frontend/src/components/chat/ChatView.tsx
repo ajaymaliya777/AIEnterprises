@@ -91,7 +91,10 @@ export const ChatView: React.FC<ChatViewProps> = ({ documents }) => {
   };
 
   return (
-    <div className="flex h-[calc(100vh-4rem)] max-w-7xl mx-auto overflow-hidden">
+    <div
+    className="flex h-[calc(100vh-4rem)] max-w-7xl mx-auto overflow-hidden"
+    style={{ zoom: '0.9' }}
+  >
       {/* Main Chat Area */}
       <div className="flex-1 flex flex-col bg-slate-950 border-r border-slate-800/80">
         {/* Messages Scroll Area */}
