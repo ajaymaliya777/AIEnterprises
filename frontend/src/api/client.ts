@@ -9,7 +9,7 @@ import {
   SystemHealth
 } from '../types';
 
-const API_BASE = '';
+const API_BASE = 'https://aienterprises.onrender.com';
 
 async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
   const response = await fetch(`${API_BASE}${url}`, {
