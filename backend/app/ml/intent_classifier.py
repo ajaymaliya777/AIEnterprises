@@ -60,11 +60,9 @@ class QueryIntentClassifier:
     def _ensure_prototypes(self):
         if self.prototype_embeddings:
             return
-
         if self.model is None:
-            from sentence_transformers import SentenceTransformer
-            from app.config import settings
-            self.model = SentenceTransformer(settings.EMBEDDING_MODEL_NAME)
+            from app.retrieval.retriever import get_embedder   # shared instance
+            self.model = get_embedder()
 
         for intent, exemplars in INTENT_EXEMPLARS.items():
             embeddings = self.model.encode(exemplars, normalize_embeddings=True)

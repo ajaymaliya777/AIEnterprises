@@ -14,13 +14,12 @@ logger = logging.getLogger(__name__)
 _EMBEDDER = None
 
 
+# app/retrieval/retriever.py — already has this, just export it properly
 def get_embedder():
     global _EMBEDDER
     if _EMBEDDER is None:
         from sentence_transformers import SentenceTransformer
-        logger.info(f"Loading SentenceTransformer embedding model: {settings.EMBEDDING_MODEL_NAME}")
         _EMBEDDER = SentenceTransformer(settings.EMBEDDING_MODEL_NAME)
-        logger.info("Embedding model loaded.")
     return _EMBEDDER
 
 
