@@ -91,9 +91,9 @@ export const ChatView: React.FC<ChatViewProps> = ({ documents }) => {
   };
 
   return (
-    <div className="flex h-[calc(100vh-4rem)] max-w-7xl mx-auto overflow-hidden">
+   <div className="flex h-[calc(100vh-4rem)] w-full overflow-hidden">
       {/* Main Chat Area */}
-      <div className="flex-1 flex flex-col bg-slate-950 border-r border-slate-800/80">
+      <div className="flex-1 min-w-0 flex flex-col bg-slate-950 border-r border-slate-800/80">
         {/* Messages Scroll Area */}
         <div className="flex-1 p-6 overflow-y-auto space-y-6">
           {messages.map((msg) => {
@@ -226,7 +226,7 @@ export const ChatView: React.FC<ChatViewProps> = ({ documents }) => {
         {/* Input Bar & Suggestion Chips */}
         <div className="p-4 border-t border-slate-800 bg-slate-900/60">
           {/* Sample Prompts */}
-          <div className="flex items-center gap-2 mb-3 overflow-x-auto pb-1 text-xs">
+          <div className="flex items-center gap-2 mb-3 overflow-x-auto pb-1 text-xs scrollbar-thin">
             <span className="text-[11px] text-slate-400 font-medium whitespace-nowrap">Try:</span>
             {sampleQuestions.map((q, idx) => (
               <button
